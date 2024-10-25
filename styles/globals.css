@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Raleway:wght@600&family=Rubik:wght@700&display=swap');
+
+body{
+  background-color: #e3e3e3;
+  padding: 0;
+  margin: 0;
+  color: var(--font-color);
+  font-family: 'poppins', 'raleway', 'rubik';
+  overflow-x: hidden;
+}
+
+:root{
+  --secondary-bg: #666;
+  --font-color: #121214;
+  --theme-bg: #3477eb;
+  --button-color: #3477eb;
+  --accents: #133775;
+}
