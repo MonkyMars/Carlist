@@ -2,7 +2,22 @@ import styles from "../styles/components/Car.module.scss";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
+interface pages {
+  label: string;
+  src: string;
+  value: string;
+}
+
 const Car = ({ carData }) => {
+
+  const pages: pages[] = [
+    { label: 'Year', src: '/car/clock.png', value: String(carData.year)},
+    { label: 'Horsepower', src: '/car/engine.png', value: String(carData.hp) + ' Hp' },
+    { label: 'Weight', src: '/car/weight.png', value: String(carData.weight) + ' Kg'},
+    { label: 'Seats', src: '/car/car-seat.png', value: String(carData.seats)},
+    { label: 'Engine type', src: '/car/piston.png', value: String(carData.engine_type)},
+    { label: 'Fuel type', src: '/car/fuel.png', value: carData.fuel_type}
+  ]
   return (
     <div className={styles.car}>
       <Image alt={carData.model} src={carData.image} width={200} height={120} />
@@ -12,33 +27,22 @@ const Car = ({ carData }) => {
         </span>
       </header>
       <div>
+        {/*add object for items and map [0, 2] and [3, 5]  */}
         <ul>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/clock.png"} width={20} height={20} />
-            <li>{carData.year}</li>
-          </div>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/engine.png"} width={20} height={20} />
-            <li>{carData.hp} Hp</li>
-          </div>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/weight.png"} width={20} height={20} />
-            <li>{carData.weight} Kg</li>
-          </div>
-        </ul>
+      {pages.slice(0, 3).map((page: any, index: number) => (
+        <div aria-label="multi" key={index}>
+          <Image alt={page.label} src={page.src} width={20} height={20} />
+          <li>{page.value}</li>
+        </div>
+      ))}
+    </ul>
         <ul>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/car-seat.png"} width={20} height={20} />
-            <li>{carData.seats}</li>
+          {pages.slice(3, 6).map((page: any, index: number) => (
+            <div aria-label="multi" key={index}>
+            <Image alt={page.label} src={page.src} width={20} height={20} />
+            <li>{page.value}</li>
           </div>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/piston.png"} width={20} height={20} />
-            <li>{carData.engine_type}</li>
-          </div>
-          <div aria-label="multi">
-            <Image alt="" src={"/car/fuel.png"} width={20} height={20} />
-            <li>{carData.fuel_type}</li>
-          </div>
+          ))}
         </ul>
       </div>
       <button>{"Look around"}</button>
