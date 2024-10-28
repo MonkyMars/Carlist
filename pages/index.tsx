@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       offset: 0, 
       duration: 700, 
       easing: 'ease-in-out',
+      delay: 100
     });
   }, []);
   return (
