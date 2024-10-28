@@ -15,12 +15,15 @@ const Home: NextPage = () => {
   useEffect(() => {
     AOS.init({
       offset: 0, 
-      duration: 500, 
+      duration: 700, 
       easing: 'ease-in-out',
     });
   }, []);
   return (
     <>
+    <Head>
+      <title>{'CarList'}</title>
+    </Head>
       <h2 className={styles.title} data-aos="fade">{"CarList"}</h2>
       <main className={styles.main} data-aos="fade-down">
         <section>
