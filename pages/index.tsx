@@ -20,6 +20,11 @@ const Home: NextPage = () => {
       delay: 100
     });
   }, []);
+  const images: {label: string; src: string;}[] = [
+    { label: 'Audi RS5 B9', src: '/rs5.png' },
+    { label: 'Porsche 911 922 Gt3 Touring', src: '/porsche-model.png' },
+    { label: 'McLaren Senna', src: '/mclaren-senna.webp'}
+  ]
   return (
     <>
     <Head>
@@ -44,7 +49,7 @@ const Home: NextPage = () => {
         <button onClick={() => router.push("/carfinder")}>
           {"Car Finders"}
         </button>
-        <button onClick={() => router.push("/collection/showcase")}>
+        <button onClick={() => router.push("/manufacturers/")}>
           {"Browse Collection"}
         </button>
         <button onClick={() => router.push("/insights")}>

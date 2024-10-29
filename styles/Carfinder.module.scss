@@ -1,0 +1,48 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & header,
+  .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  & header {
+    flex-direction: column;
+  }
+  & .inputs {
+    width: 80%;
+    grid-gap: 0.3em;
+    & input[type="text"] {
+      border: none;
+      background-color: var(--theme-bg);
+      color: #fff;
+      padding: 0.7em 1em;
+      width: 30%;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: "poppins";
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    & button {
+      padding: 1em 2em;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      transition: all 0.2s;
+      & img {
+        width: 90%;
+        height: 90%;
+      }
+    }
+  }
+}
