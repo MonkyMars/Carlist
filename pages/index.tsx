@@ -52,8 +52,8 @@ const Home: NextPage = () => {
         <button onClick={() => router.push("/manufacturers/")}>
           {"Browse Collection"}
         </button>
-        <button onClick={() => router.push("/insights")}>
-          {"Discover Insights"}
+        <button onClick={() => router.push("/compare")}>
+          {"Compare"}
         </button>
       </div>
       <main className={styles.articles}>
