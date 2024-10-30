@@ -17,7 +17,8 @@ const Home: NextPage = () => {
       offset: 0, 
       duration: 700, 
       easing: 'ease-in-out',
-      delay: 100
+      delay: 100,
+      once: true,
     });
   }, []);
   const images: {label: string; src: string;}[] = [
@@ -30,7 +31,8 @@ const Home: NextPage = () => {
     <Head>
       <title>{'CarList'}</title>
     </Head>
-      <h2 className={styles.title} data-aos="fade">{"CarList"}</h2>
+    <Nav/>
+      {/* <h2 className={styles.title} data-aos="fade">{"CarList"}</h2> */}
       <main className={styles.main} data-aos="fade-down">
         <section>
           <h2>{"CarList"}</h2>
