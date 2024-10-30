@@ -3,8 +3,16 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from '../../styles/Manufacturers.module.scss'
 import Nav from "../../components/Nav";
+
+interface CarModel {
+  id: number;
+  make_id: number;
+  name: string;
+}
+
+
 const ManufacturerPage = () => {
-  const [models, setModels] = useState([]);
+  const [models, setModels] = useState<CarModel[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -43,6 +51,7 @@ const ManufacturerPage = () => {
           return response.json();
         })
         .then((data) => {
+          console.log(data.data)
           setModels(data.data);
           setLoading(false);
         })
